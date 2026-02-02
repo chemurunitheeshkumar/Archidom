@@ -1,0 +1,30 @@
+
+	
+	
+	// Accordion Box
+	if (.accordion-box.length) {
+		.accordion-box.on('click', '.acc-btn', function () {
+
+			var outerBox = .parents('.accordion-box');
+			var target = .parents('.accordion-block');
+
+			if (.next('.acc-content').is(':visible')) {
+				.removeClass('active');
+				target.removeClass('active');
+				.next('.acc-content').slideUp(300);
+				.find('.icon-outer i').removeClass('fa-arrow-up').addClass('fa-arrow-down');
+			} else {
+				.find('.accordion-block .acc-btn').removeClass('active');
+				.find('.accordion-block').removeClass('active');
+				.find('.accordion-block').children('.acc-content').slideUp(300);
+				.find('.accordion-block .acc-btn .icon-outer i').removeClass('fa-arrow-up').addClass('fa-arrow-down');
+
+				.addClass('active');
+				target.addClass('active');
+				.next('.acc-content').slideDown(300);
+				.find('.icon-outer i').removeClass('fa-arrow-down').addClass('fa-arrow-up');
+			}
+		});
+	}
+
+
